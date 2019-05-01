@@ -1,3 +1,3 @@
 # Qt_Opengl_tutorial
 
-Heloo World QT Tutorial..
+Heloo World QT Tutorial from gerrere..
