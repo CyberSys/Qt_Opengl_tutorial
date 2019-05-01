@@ -1,3 +1,6 @@
 # Qt_Opengl_tutorial
 
-Heloo World QT Tutorial from gerrere..
+this demo shows Gapi lib usage & shows how to connect QT controlls to controll uniform variable in simple shader program.
+
+
+
