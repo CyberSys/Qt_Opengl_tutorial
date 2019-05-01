@@ -1,0 +1,54 @@
+#pragma once
+
+namespace GAPI
+{
+	enum TextureFilter
+	{
+		POINT,
+		LINEAR,
+		ANISOTROPIC,
+		LINEAR_MIP_POINT,
+		POINT_MIP_LINEAR,
+		MIN_LINEAR_MAG_POINT_MIP_LINEAR,
+		MIN_LINEAR_MAG_POINT_MIP_POINT,
+		MIN_POINT_MAG_LINEAR_MIP_LINEAR,
+		MIN_POINT_MAG_LINEAR_MIP_POINT
+	};
+
+	enum TextureAddressMode
+	{
+		WRAP,
+		CLAMP,
+		MIRROR,
+		BORDER
+	};
+
+	enum ComparisonFunction
+	{
+		ALWAYS,
+		NEVER,
+		LESS,
+		LESS_EQUAL,
+		EQUAL,
+		GREATER_EQUAL,
+		GREATER,
+		NOT_EQUAL
+	};
+
+	enum RenderType
+	{
+		STATIC,
+		DYNAMIC
+	};
+
+	enum Primitive
+	{
+		POINTS,
+		LINES,
+		LINE_STRIP,
+		LINE_LOOP,
+		TRIANGLES,
+		TRIANGLE_STRIP,
+		TRIANGLE_VAN
+	};
+}

@@ -20,9 +20,12 @@ OpenglWidget::OpenglWidget(QWidget *parent) :
 		"uniform vec4 color;\n"
 		"void main()\n"
 		"{\n"
-		//"   FragColor = vec4(color.x, color.y, color.z, color.w);\n"
-		"   FragColor = vec4(1, 1,1,1);\n"
+		"   FragColor = vec4(color.x, color.y, color.z, color.w);\n"
+		//"   FragColor = vec4(1, 1,1,1);\n"
 		"}\n\0";
+
+	r = g = b = 1.0f;
+	a = 1.0f;
 
 }
 
@@ -33,23 +36,26 @@ OpenglWidget::~OpenglWidget()
 
 void OpenglWidget::setRed(int val)
 {
-
-
+	r = val / 100.0f;
+	update();
 }
 
 void OpenglWidget::setGreen(int val)
 {
-
+	g = val / 100.0f;
+	update();
 }
 
 void OpenglWidget::setBlue(int val)
 {
-
+	b = val / 100.0f;
+	update();
 }
 
 void OpenglWidget::setAlpha(int val)
 {
-
+	a = val / 100.0f;
+	update();
 }
 
 
@@ -75,7 +81,12 @@ void OpenglWidget::initializeGL()
 	ml.elements.push_back(el);
 
 	//create vertex array object to handle all vertex buffers..
-	vertexArraybuffer_id = GAPI::GAPI_CreateVAO(vertexbuffer_id,0, &ml);
+	vertexArraybuffer_id = GAPI::GAPI_CreateVertexArray(vertexbuffer_id,0, ml);
+
+	
+	//send uniform value to shader... once to initialize value let do it white color..
+	GAPI::GAPI_BindShader(shaderprogram_id);
+	GAPI::GAPI_SetUniform_vec4(shaderprogram_id, "color", glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));
 }
 
 void OpenglWidget::paintGL()
@@ -85,6 +96,7 @@ void OpenglWidget::paintGL()
 
 
 	GAPI::GAPI_BindShader(shaderprogram_id);
+	GAPI::GAPI_SetUniform_vec4(shaderprogram_id, "color", glm::vec4(r, g, b, a));
 
 	GAPI::GAPI_Draw(GAPI::Primitive::TRIANGLES, vertexArraybuffer_id, vertexbuffer_id, 3);
 }

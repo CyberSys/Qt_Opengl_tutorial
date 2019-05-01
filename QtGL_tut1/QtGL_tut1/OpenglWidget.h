@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QOpenGLWidget>
-#include <Graphics.h>
+#include <GraphicsGL.h>
 
 class OpenglWidget : public QOpenGLWidget
 {
