@@ -51,4 +51,14 @@ namespace GAPI
 		TRIANGLE_STRIP,
 		TRIANGLE_VAN
 	};
+
+	enum GLcapability
+	{
+		BLENDING,
+		FACE_CULLING,
+		MULTISAMPLING,
+		DEPTH_TEST,
+		SCISSOR_TEST,
+		STENCIL_TEST
+	};
 }

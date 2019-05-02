@@ -13,6 +13,12 @@ namespace GAPI
 	GAPI_Init();
 
 	GAPI_API void
+	GAPI_Enable(GLcapability cap);
+
+	GAPI_API void
+	GAPI_Disable(GLcapability cap);
+
+	GAPI_API void
 	GAPI_SetClearColor(float r, float g, float b, float a);
 
 	GAPI_API void

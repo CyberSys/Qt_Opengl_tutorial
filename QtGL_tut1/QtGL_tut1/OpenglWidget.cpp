@@ -21,7 +21,6 @@ OpenglWidget::OpenglWidget(QWidget *parent) :
 		"void main()\n"
 		"{\n"
 		"   FragColor = vec4(color.x, color.y, color.z, color.w);\n"
-		//"   FragColor = vec4(1, 1,1,1);\n"
 		"}\n\0";
 
 	r = g = b = 1.0f;
@@ -63,6 +62,7 @@ void OpenglWidget::initializeGL()
 {
 	//init graphic api..
 	GAPI::GAPI_Init();
+	GAPI::GAPI_Enable(GAPI::GLcapability::BLENDING);
 
 	//create shader 
 	shaderprogram_id = GAPI::GAPI_CreateProgram(vertexShaderSource, fragmentShaderSource);
