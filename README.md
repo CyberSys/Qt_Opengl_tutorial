@@ -8,3 +8,5 @@ GAPI lib : https://github.com/sho3la/GAPI
 ![alt text](https://github.com/sho3la/Qt_Opengl_tutorial/blob/master/screenshot/screenshot.PNG)
 
 ![alt text](https://github.com/sho3la/Qt_Opengl_tutorial/blob/master/screenshot/screenshot2.PNG)
+
+![alt text](https://github.com/sho3la/Qt_Opengl_tutorial/blob/master/screenshot/screenshot3.PNG)
